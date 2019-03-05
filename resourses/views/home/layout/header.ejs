@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>دوره آموزشی نود</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="css/vazir.css">
+</head>
+<body>
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">مجله آموزشی نود</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">کلاس ها</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">درباره ما</a>
+                </li>
+            </ul>
+
+            <% if(auth.checked){ %>
+            <div class="btn-group">
+                <a href="./user_panel" class="btn btn-success">پنل کاربری</a>
+                <a href="./logout" class="btn btn-primary">خروج</a>
+            </div>
+            <% }else{ %>
+            <div class="btn-group">
+                <a href="./login" class="btn btn-success">ورود</a>
+                <a href="./register" class="btn btn-primary">ثبت نام</a>
+            </div>
+            <% } %>
+
+        </div>
+    </nav>
+</header>

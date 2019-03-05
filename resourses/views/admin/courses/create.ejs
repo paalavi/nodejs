@@ -1,0 +1,137 @@
+<%-include('../layout/header') -%>
+
+<div class="container-fluid">
+    <div class="row">
+        <main role="main" class="col-md-9 mr-sm-auto col-lg-10 pt-3 px-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                <h2>ایجاد دوره</h2>
+            </div>
+            <form class="form-horizontal" action="/admin/courses/create" method="POST" enctype="multipart/form-data">
+
+                <%- include('../layout/errorMessages') -%>
+
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="title" class="control-label font-weight-bold">عنوان دوره</label>
+                        <input type="text" class="form-control" name="title" id="title" placeholder="عنوان را وارد کنید" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="type" class="control-label font-weight-bold font-weight-bold">نوع دوره</label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="vip">اعضای ویژه</option>
+                            <option value="cash">نقدی</option>
+                            <option value="free" selected>رایگان</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="body" class="control-label font-weight-bold">متن</label>
+                        <textarea rows="5" class="form-control" name="body" id="body" placeholder="متن مقاله را وارد کنید"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="images" class="control-label font-weight-bold">تصویر دوره</label>
+                        <input type="file" class="form-control" name="images" id="images" placeholder="تصویر مقاله را وارد کنید" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="price" class="control-label font-weight-bold">قیمت</label>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="قیمت ها را وارد کنید" value="">
+                    </div>
+                    <div class="col">
+                        <label for="tags" class="control-label font-weight-bold">تگ ها</label>
+                        <input type="text" class="form-control" name="tags" id="tags" placeholder="تگ ها را وارد کنید" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-danger">ارسال</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span data-feather="home"></span>
+                            داشبورد
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file"></span>
+                            سفارشات
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/courses">
+                            <span data-feather="shopping-cart"></span>
+                            دورها
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="users"></span>
+                            کاربران
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="bar-chart-2"></span>
+                            گزارشات
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="layers"></span>
+                            نظرات
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>گزارشات ذخیره شده</span>
+                    <a class="d-flex align-items-center text-muted" href="#">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            این ماه
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            ماه گذشته
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            شبکه های اجتماعی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            فروش سالانه
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<%-include('../layout/footer') -%>
