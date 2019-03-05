@@ -6,7 +6,7 @@ const path = require('path');
 
 const {validationResult} = require('express-validator/check');
 
-class AdminController extends controller {
+class CourseController extends controller {
   async index(req, res) {
     let page = parseInt(req.query.page) || 1;
     let courses = await Course.paginate({}, {page: page, limit: 10, sort: {createdAt: 1}});
@@ -132,4 +132,4 @@ class AdminController extends controller {
   }
 }
 
-module.exports = new AdminController;
+module.exports = new CourseController;
